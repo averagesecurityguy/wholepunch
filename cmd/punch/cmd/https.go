@@ -15,7 +15,7 @@ var (
 )
 
 func init() {
-	beaconCmd.AddCommand(httpGetCmd)
+	beaconCmd.AddCommand(httpsGetCmd)
 	httpsGetCmd.PersistentFlags().StringVar(&flHTTPSGetServerPort, "server-port", "80", "HTTP port to connect to.")
 	httpsGetCmd.PersistentFlags().StringVar(&flHTTPSGetUserAgent, "user-agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko", "User-Agent to use during HTTP request.")
 	httpsGetCmd.PersistentFlags().StringVar(&flHTTPSGetURLPath, "path", "/", "URL path to use during HTTP request.")
