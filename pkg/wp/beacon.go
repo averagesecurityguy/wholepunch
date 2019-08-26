@@ -1,6 +1,8 @@
 package wp
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // BeaconOptions are passed during a Beacon's setup.
 // These are generic options that can be used across many different tasks.
@@ -13,15 +15,25 @@ type BeaconOptions struct {
 type BeaconResult struct {
 	Name        string
 	Destination string
+	LayerData   BeaconLayerData
 	Err         error
 	WasOk       bool
 	Info        string
+}
+
+// BeaconLayerData holds OSI info about a beacon.
+type BeaconLayerData struct {
+	AppLayer           string
+	TransportLayer     string
+	TransportLayerPort int
+	NetworkLayer       string
 }
 
 // Beacon is an interface for a outbound connection from an agent to a listening server.
 type Beacon interface {
 	Name() string
 	Destination() string
+	// LayerData() BeaconLayerData. TODO: Implement this.
 	Setup(*BeaconOptions) error
 	Send() (bool, error)
 	Success() string

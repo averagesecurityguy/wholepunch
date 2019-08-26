@@ -19,7 +19,7 @@ func (b *BeaconTCP) Name() string {
 
 // Destination returns the server that was connected to.
 func (b *BeaconTCP) Destination() string {
-	return b.ServerAddr
+	return fmt.Sprintf("tcp://%s", b.ServerAddr)
 }
 
 // Success returns a formatted string indicating a successfull connection.
