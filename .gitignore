@@ -11,3 +11,8 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 cmd/punch/punch
+
+# Certificates
+*.pem
+*.key
+*.zip
