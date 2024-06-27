@@ -1,4 +1,4 @@
-module github.com/averagesecurityguy/wholepunch
+module github.com/tomsteele/wholepunch
 
 go 1.19
 
